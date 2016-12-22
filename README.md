@@ -71,4 +71,5 @@ service "indexer" do
 end
 ```
 
-You can find the complete sample cookbook from `cookbook/elk`
+You can find the complete sample cookbook from https://github.com/KongZ/logstash-cookbook/tree/develop/cookbooks/elk
+If you want to create your own cookbook for sharing, you can find a useful tutorial from my experience here https://github.com/KongZ/logstash-cookbook/tree/develop/cookbooks
