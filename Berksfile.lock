@@ -1,0 +1,37 @@
+DEPENDENCIES
+  elasticsearch
+    git: https://github.com/elastic/cookbook-elasticsearch.git
+    revision: a2cd2080ad821df049371bae6727de7d36101b8d
+  java
+
+GRAPH
+  apt (5.0.0)
+    compat_resource (>= 12.14.7)
+  ark (2.0.2)
+    build-essential (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+    windows (>= 0.0.0)
+  build-essential (7.0.2)
+    compat_resource (>= 12.14)
+    mingw (>= 1.1)
+    seven_zip (>= 0.0.0)
+  chef-sugar (3.4.0)
+  compat_resource (12.16.2)
+  elasticsearch (3.0.1)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    chef-sugar (>= 0.0.0)
+    yum (>= 0.0.0)
+  homebrew (2.1.2)
+    build-essential (>= 2.1.2)
+  java (1.42.0)
+    apt (>= 0.0.0)
+    homebrew (>= 0.0.0)
+    windows (>= 0.0.0)
+  mingw (1.2.4)
+    compat_resource (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+  seven_zip (2.0.2)
+    windows (>= 1.2.2)
+  windows (2.0.2)
+  yum (4.1.0)

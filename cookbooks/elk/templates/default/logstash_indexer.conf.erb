@@ -1,0 +1,30 @@
+input { 
+	redis {
+		host => "localhost"
+		key => "logstash"
+		data_type => "list"
+		codec => plain
+	}
+}
+filter {
+	grok {
+		match => { "message" => "%{URIPATH:path}	%{DATA:query_parameters}	%{DATA:request_parameters_plain}	%{DATA:user_agent}	%{IPV4:client_ip}	%{WORD:verb}	%{NUMBER:status}	%{DATA:headers}	%{DATA:body_plain}	%{TIMESTAMP_ISO8601:created_at}" }
+	}
+	json {
+		source => "request_parameters_plain"
+		target => "request_parameters"
+	}
+	json {
+		source => "body_plain"
+		target => "body"
+	}
+}
+output {
+	elasticsearch {
+		hosts => ["localhost"]
+		index => "logstash-%{+YYYY.MM.dd}"
+	}
+	stdout { 
+		codec => rubydebug 
+	}
+}

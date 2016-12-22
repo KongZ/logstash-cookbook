@@ -1,0 +1,20 @@
+input { 
+	beats {
+		port => 5044
+	}
+	http {
+		port => 5055
+		codec => plain
+	}
+}
+output {
+	redis {
+		host => ["127.0.0.1"]
+		data_type => list
+		key => "logstash"
+		codec => plain
+	}
+	stdout { 
+		codec => rubydebug 
+	}
+}
